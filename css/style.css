@@ -805,3 +805,18 @@ p {
     ),
     url("../images/hero.jpg") 62% center / cover no-repeat;
 }
+/* Reveal makeup brushes while keeping hero text readable */
+.hero {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 248, 243, 0.28) 0%,
+      rgba(255, 248, 243, 0.48) 10%,
+      rgba(255, 248, 243, 0.97) 20%,
+      rgba(255, 248, 243, 0.94) 38%,
+      rgba(255, 248, 243, 0.62) 52%,
+      rgba(255, 248, 243, 0.12) 68%,
+      rgba(255, 248, 243, 0) 78%
+    ),
+    url("../images/hero.jpg") 58% center / cover no-repeat;
+}
