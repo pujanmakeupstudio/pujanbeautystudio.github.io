@@ -731,3 +731,63 @@ p {
     border-radius: 22px;
   }
 }
+/* Integrated full-background hero */
+.hero {
+  min-height: 720px;
+  padding: 75px 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 250, 248, 0.96) 0%,
+      rgba(255, 250, 248, 0.88) 27%,
+      rgba(255, 250, 248, 0.35) 48%,
+      rgba(255, 250, 248, 0) 68%
+    ),
+    url("../images/hero.jpg") center center / cover no-repeat;
+}
+
+.hero .container {
+  width: min(1240px, calc(100% - 48px));
+}
+
+.hero-grid {
+  display: block;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  width: min(470px, 100%);
+  max-width: 470px;
+}
+
+/* Hide the separate image card because the image is now the background */
+.hero-art {
+  display: none;
+}
+
+.hero::after {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 680px;
+    background-position: 62% center;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    min-height: auto;
+    padding: 55px 0 420px;
+    background-position: 68% bottom;
+    background-size: auto 420px;
+    background-color: #fffaf8;
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: none;
+  }
+}
