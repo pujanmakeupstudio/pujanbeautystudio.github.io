@@ -230,9 +230,9 @@ p {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 42% 58%;
   align-items: center;
-  gap: 64px;
+  gap: 40px;
 }
 
 .hero-text {
