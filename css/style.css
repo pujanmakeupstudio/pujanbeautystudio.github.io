@@ -856,3 +856,30 @@ p {
   background: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(8px);
 }
+/* Smooth transition from hero to welcome section */
+.intro {
+  position: relative;
+  padding-top: 120px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 248, 243, 0.72) 0%,
+      #ffffff 130px
+    );
+}
+
+.intro::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: min(220px, 40%);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(183, 122, 114, 0.55),
+    transparent
+  );
+}
