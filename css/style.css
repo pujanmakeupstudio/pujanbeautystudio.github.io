@@ -820,3 +820,18 @@ p {
     ),
     url("../images/hero.jpg") 58% center / cover no-repeat;
 }
+/* Refine hero image balance */
+.hero {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 248, 243, 0.64) 0%,
+      rgba(255, 248, 243, 0.82) 13%,
+      rgba(255, 248, 243, 0.96) 23%,
+      rgba(255, 248, 243, 0.88) 36%,
+      rgba(255, 248, 243, 0.45) 49%,
+      rgba(255, 248, 243, 0.08) 63%,
+      rgba(255, 248, 243, 0) 74%
+    ),
+    url("../images/hero.jpg") 58% center / cover no-repeat;
+}
