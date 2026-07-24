@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" role="img" aria-labelledby="title desc">
+<title id="title">Beauty studio placeholder artwork</title>
+<desc id="desc">Abstract rose gold beauty illustration used until real salon photography is added.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#f8e7e2"/>
+    <stop offset="1" stop-color="#c98d84"/>
+  </linearGradient>
+  <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#fff" stop-opacity=".9"/>
+    <stop offset="1" stop-color="#fff" stop-opacity=".15"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="900" rx="80" fill="url(#bg)"/>
+<circle cx="620" cy="180" r="140" fill="#fff" opacity=".22"/>
+<circle cx="150" cy="700" r="220" fill="#8f5e58" opacity=".12"/>
+<path d="M278 665c-3-149 45-305 135-428 66 82 103 171 112 269 8 87-23 151-96 192-66 37-149 23-151-33Z" fill="#fffaf8" opacity=".94"/>
+<path d="M360 283c47 33 80 77 98 132M328 356c56 29 96 69 120 122M309 446c58 17 102 48 132 91" fill="none" stroke="#b77a72" stroke-width="10" stroke-linecap="round" opacity=".75"/>
+<path d="M179 233c92-85 195-99 310-44" fill="none" stroke="url(#shine)" stroke-width="15" stroke-linecap="round"/>
+<text x="400" y="808" text-anchor="middle" font-family="Georgia, serif" font-size="46" fill="#fffaf8">Your photo can go here</text>
+</svg>

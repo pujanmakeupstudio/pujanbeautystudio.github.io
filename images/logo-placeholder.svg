@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title">
+<title>Pujan Beauty Studio placeholder logo</title>
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#d8aaa3"/>
+    <stop offset="1" stop-color="#8f5e58"/>
+  </linearGradient>
+</defs>
+<circle cx="60" cy="60" r="57" fill="#fffaf8" stroke="url(#g)" stroke-width="4"/>
+<path d="M32 82c16-6 24-22 25-48 14 15 21 31 30 49" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round"/>
+<circle cx="60" cy="28" r="4" fill="#b77a72"/>
+</svg>
