@@ -791,3 +791,16 @@ p {
     max-width: none;
   }
 }
+/* Softer blend between text and bridal image */
+.hero {
+  background:
+    linear-gradient(
+      90deg,
+      #fff8f3 0%,
+      rgba(255, 248, 243, 0.98) 28%,
+      rgba(255, 248, 243, 0.82) 40%,
+      rgba(255, 248, 243, 0.34) 56%,
+      rgba(255, 248, 243, 0) 72%
+    ),
+    url("../images/hero.jpg") 62% center / cover no-repeat;
+}
