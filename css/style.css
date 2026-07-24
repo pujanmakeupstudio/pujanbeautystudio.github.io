@@ -835,3 +835,20 @@ p {
     ),
     url("../images/hero.jpg") 58% center / cover no-repeat;
 }
+/* Refine hero call-to-action buttons */
+.hero .button {
+  min-height: 54px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+}
+
+.hero .button-primary {
+  box-shadow: 0 10px 24px rgba(46, 36, 35, 0.16);
+}
+
+.hero .button-secondary {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+}
