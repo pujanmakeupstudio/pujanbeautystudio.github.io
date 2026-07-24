@@ -76,8 +76,10 @@ h3 {
 }
 
 h1 {
-  margin-bottom: 24px;
-  font-size: clamp(3rem, 7vw, 6rem);
+  margin: 0 0 28px;
+  font-size: clamp(4.2rem, 6vw, 5.8rem);
+  line-height: 0.96;
+  letter-spacing: -0.03em;
   font-weight: 600;
 }
 
@@ -95,6 +97,8 @@ h3 {
 p {
   margin-top: 0;
   color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.85;
 }
 
 .skip-link {
@@ -236,8 +240,8 @@ p {
 }
 
 .hero-text {
-  max-width: 640px;
-  font-size: 1.12rem;
+  max-width: 520px;
+  font-size: 1.08rem;
 }
 
 .hero-actions,
@@ -758,8 +762,8 @@ p {
 .hero-copy {
   position: relative;
   z-index: 2;
-  width: min(470px, 100%);
-  max-width: 470px;
+  width: min(520px, 100%);
+  max-width: 520px;
 }
 
 /* Hide the separate image card because the image is now the background */
