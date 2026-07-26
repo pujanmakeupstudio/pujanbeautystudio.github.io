@@ -883,3 +883,87 @@ p {
     transparent
   );
 }
+/* Improved mobile hero experience */
+@media (max-width: 720px) {
+  .hero {
+    position: relative;
+    min-height: auto;
+    padding: 42px 0 350px;
+    overflow: hidden;
+    background: #fff8f3;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 330px;
+    background:
+      linear-gradient(
+        180deg,
+        #fff8f3 0%,
+        rgba(255, 248, 243, 0.25) 18%,
+        rgba(255, 248, 243, 0) 40%
+      ),
+      url("../images/hero.jpg") 72% center / cover no-repeat;
+  }
+
+  .hero .container {
+    position: relative;
+    z-index: 1;
+    width: min(100% - 30px, 620px);
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: none;
+  }
+
+  .hero h1 {
+    margin-bottom: 22px;
+    font-size: clamp(3.25rem, 17vw, 4.6rem);
+    line-height: 0.96;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 24px 0;
+  }
+
+  .hero .button {
+    width: 100%;
+    min-height: 52px;
+  }
+
+  .hero-details {
+    gap: 5px;
+    font-size: 0.86rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    padding-bottom: 315px;
+  }
+
+  .hero::before {
+    height: 295px;
+    background-position: 74% center;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 18vw, 4rem);
+  }
+}
+
