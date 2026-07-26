@@ -1222,3 +1222,22 @@ p {
 .contact-actions {
   margin-bottom: 0;
 }
+.contact-card,
+.contact-card * {
+    color: #2e2423 !important;
+}
+
+.contact-card span {
+    color: var(--rose-dark) !important;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.contact-card a {
+    text-decoration: none;
+    color: #2e2423 !important;
+}
+
+.contact-card a:hover {
+    color: var(--rose-dark) !important;
+}
