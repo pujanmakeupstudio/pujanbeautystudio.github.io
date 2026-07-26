@@ -1183,3 +1183,42 @@ p {
     min-height: auto;
   }
 }
+/* Fix Contact section text visibility */
+.contact-section {
+  color: var(--ink);
+}
+
+.contact-section h2,
+.contact-section h3,
+.contact-section strong {
+  color: var(--ink);
+}
+
+.contact-section p {
+  color: var(--muted);
+}
+
+.contact-section .eyebrow {
+  color: var(--rose-dark);
+}
+
+.contact-card {
+  color: var(--ink);
+}
+
+.contact-card span {
+  color: var(--rose-dark);
+}
+
+.contact-card a {
+  color: var(--ink);
+  opacity: 1;
+}
+
+.contact-card a:hover {
+  color: var(--rose-dark);
+}
+
+.contact-actions {
+  margin-bottom: 0;
+}
