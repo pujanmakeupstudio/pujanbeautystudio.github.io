@@ -419,42 +419,43 @@ p {
 }
 
 .contact-card {
-  margin: 0;
-  padding: 28px 34px;
-  border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: var(--shadow);
-  font-style: normal;
+    margin: 0;
+    padding: 30px;
+    border-radius: var(--radius);
+    background: #ffffff;
+    box-shadow: var(--shadow);
+    font-style: normal;
+    color: var(--ink);
 }
 
 .contact-card div {
-  padding: 16px 0;
-  border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
 }
 
 .contact-card div:last-child {
-  border-bottom: 0;
+    border-bottom: none;
 }
 
 .contact-card span {
-  display: block;
-  margin-bottom: 5px;
-  color: var(--muted);
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 6px;
+    color: var(--rose-dark);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 .contact-card a {
-  font-weight: 600;
-  text-decoration: none;
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .contact-card a:hover {
-  color: var(--rose-dark);
+    color: var(--rose-dark);
 }
-
 .site-footer {
   padding: 34px 0 88px;
   background: #211a19;
@@ -1239,5 +1240,14 @@ p {
 }
 
 .contact-card a:hover {
+    color: var(--rose-dark) !important;
+}
+/* Force contact information to be visible */
+.contact-card,
+.contact-card * {
+    color: var(--ink) !important;
+}
+
+.contact-card span {
     color: var(--rose-dark) !important;
 }
