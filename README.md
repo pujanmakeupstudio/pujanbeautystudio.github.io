@@ -1,17 +1,34 @@
-# Pujan Beauty Studio Website
+# Pujan Beauty Studio
 
-A lightweight static website for GitHub Pages.
+Official website for **Pujan Beauty Studio**, located in Concord, North Carolina.
 
-## Files
-- `index.html` — page content
-- `css/style.css` — site design
-- `js/script.js` — mobile menu and footer year
-- `images/` — placeholder logo, hero artwork, and favicon
+## 🌐 Website
 
-## Publish
-Upload the contents of this folder to the root of the GitHub repository and commit the changes.
+https://pujanbeautystudio.com
 
-## Later updates
-Replace `images/logo-placeholder.svg` and `images/hero-placeholder.svg` with your own files, or update the image paths in `index.html`.
+## Features
 
-Before public launch, confirm the business address, phone number, email address, hours, and Instagram account.
+- Responsive design
+- Online appointment booking
+- Automatic email confirmation
+- Mobile-friendly layout
+- Secure HTTPS
+- WhatsApp contact
+- Call button
+- Custom domain hosted on GitHub Pages
+
+## Technologies
+
+- HTML5
+- CSS3
+- JavaScript
+- Google Apps Script
+- GitHub Pages
+- Cloudflare DNS
+
+## Business
+
+**Pujan Beauty Studio**  
+Concord, North Carolina
+
+Website: https://pujanbeautystudio.com
