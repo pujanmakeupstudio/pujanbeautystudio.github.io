@@ -185,10 +185,147 @@
 
   </div>
 </section>
+<section class="section booking-section" id="booking">
+  <div class="container">
+    <div class="booking-heading">
+      <p class="eyebrow">Book an Appointment</p>
+      <h2>Request your preferred service and time</h2>
+      <p>
+        Complete the form below and Pujan Beauty Studio will contact you to
+        confirm availability. Submitting the form does not confirm the
+        appointment until you receive a confirmation.
+      </p>
+    </div>
 
+    <form class="booking-form" id="booking-form">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="booking-name">Full name</label>
+          <input
+            id="booking-name"
+            name="customerName"
+            type="text"
+            autocomplete="name"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="booking-phone">Phone number</label>
+          <input
+            id="booking-phone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="booking-email">Email address</label>
+        <input
+          id="booking-email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+        />
+      </div>
+
+      <div class="form-field">
+        <label for="booking-service">Service</label>
+        <select id="booking-service" name="service" required>
+          <option value="">Select a service</option>
+          <option value="Bridal Makeup">Bridal Makeup</option>
+          <option value="Party Makeup">Party Makeup</option>
+          <option value="Airbrush Makeup">Airbrush Makeup</option>
+          <option value="Hair Styling">Hair Styling</option>
+          <option value="Hair Color">Hair Color</option>
+          <option value="Hair Cut">Hair Cut</option>
+          <option value="Facial">Facial</option>
+          <option value="Threading">Threading</option>
+          <option value="Waxing">Waxing</option>
+          <option value="Henna">Henna</option>
+          <option value="Eyebrows">Eyebrows</option>
+          <option value="Lash Extensions">Lash Extensions</option>
+          <option value="Nail Services">Nail Services</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="booking-date">Preferred date</label>
+          <input
+            id="booking-date"
+            name="preferredDate"
+            type="date"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="booking-time">Preferred time</label>
+          <select id="booking-time" name="preferredTime" required>
+            <option value="">Select a time</option>
+            <option>9:00 AM</option>
+            <option>9:30 AM</option>
+            <option>10:00 AM</option>
+            <option>10:30 AM</option>
+            <option>11:00 AM</option>
+            <option>11:30 AM</option>
+            <option>12:00 PM</option>
+            <option>12:30 PM</option>
+            <option>1:00 PM</option>
+            <option>1:30 PM</option>
+            <option>2:00 PM</option>
+            <option>2:30 PM</option>
+            <option>3:00 PM</option>
+            <option>3:30 PM</option>
+            <option>4:00 PM</option>
+            <option>4:30 PM</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="booking-notes">Tell us what you are looking for</label>
+        <textarea
+          id="booking-notes"
+          name="notes"
+          rows="6"
+          maxlength="1500"
+          placeholder="Describe the occasion, preferred style, number of people, or any special requests."
+        ></textarea>
+      </div>
+
+      <label class="booking-consent">
+        <input type="checkbox" name="consent" required />
+        <span>
+          I understand this is an appointment request and the booking is only
+          confirmed after Pujan Beauty Studio contacts me.
+        </span>
+      </label>
+
+      <input
+        class="form-honeypot"
+        type="text"
+        name="website"
+        tabindex="-1"
+        autocomplete="off"
+      />
+
+      <button class="button button-primary booking-submit" type="submit">
+        Submit Appointment Request
+      </button>
+
+      <p class="booking-status" id="booking-status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
 <section class="section appointment-section" id="hours">
-    <section class="section appointment-section" id="hours">
-      <div class="container appointment-grid">
+         <div class="container appointment-grid">
         <div>
           <p class="eyebrow">Appointments</p>
           <h2>Plan your visit</h2>
