@@ -1472,9 +1472,12 @@ p {
 }
 
 .referral-consent input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
+    appearance: auto;
+    -webkit-appearance: checkbox;
+    width: 16px;
+    height: 16px;
     margin: 0;
+    transform: scale(0.8);
     cursor: pointer;
     flex-shrink: 0;
 }
