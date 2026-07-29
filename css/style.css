@@ -1461,3 +1461,27 @@ p {
     gap: 0;
   }
 }
+
+/* Referral checkbox */
+.referral-consent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.referral-consent input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.referral-consent label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
