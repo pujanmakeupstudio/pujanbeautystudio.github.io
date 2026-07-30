@@ -237,7 +237,7 @@ if (referralForm) {
 
 const validationResult =
   await validateReferralCode(validationUrl);
-
+       console.log('Receiver validation result:', validationResult);
 if (validationResult.alreadyReferred) {
   showReferralStatus(
     'This person has already been referred to Pujan Beauty Studio.',
