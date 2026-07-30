@@ -89,6 +89,7 @@ if (bookingForm) {
       customerName: getFormValue(formData, 'customerName'),
       phone: getFormValue(formData, 'phone'),
       email: getFormValue(formData, 'email'),
+      referralCode: getFormValue(formData, 'referralCode').toUpperCase(),
       service: getFormValue(formData, 'service'),
       preferredDate: getFormValue(formData, 'preferredDate'),
       preferredTime: getFormValue(formData, 'preferredTime'),
