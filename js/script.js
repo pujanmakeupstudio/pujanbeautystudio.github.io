@@ -109,6 +109,25 @@ if (bookingForm) {
     );
 
     try {
+       
+if (bookingData.referralCode) {
+  const validationUrl =
+    `${BOOKING_WEB_APP_URL}?action=validateReferral&referralCode=` +
+    encodeURIComponent(bookingData.referralCode);
+
+  const validationResponse = await fetch(validationUrl);
+  const validationResult = await validationResponse.json();
+
+  if (!validationResult.valid) {
+    showBookingStatus(
+      'This referral code is invalid or has already been used.',
+      'error'
+    );
+    return;
+  }
+}
+
+       
       await sendToAppsScript(bookingData);
 
       bookingForm.reset();
