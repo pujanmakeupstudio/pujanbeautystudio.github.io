@@ -143,7 +143,7 @@ if (bookingData.referralCode) {
       console.error('Booking submission failed:', error);
 
       showBookingStatus(
-        'We could not send your request. Please call or contact us through WhatsApp.',
+        'This referral code is invalid or has already been used. Please remove it or use a valid referral code.',
         'error'
       );
     } finally {
