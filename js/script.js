@@ -115,10 +115,9 @@ if (bookingData.referralCode) {
     `${BOOKING_WEB_APP_URL}?action=validateReferral&referralCode=` +
     encodeURIComponent(bookingData.referralCode);
 
-  const validationResponse = await fetch(validationUrl);
-  const validationResult = await validationResponse.json();
+ const validationResult = await validateReferralCode(validationUrl);
 
-  if (!validationResult.valid) {
+   if (!validationResult.valid) {
     showBookingStatus(
       'This referral code is invalid or has already been used.',
       'error'
@@ -366,4 +365,35 @@ function updateFormStatus(
   } else if (statusType === 'pending') {
     statusElement.classList.add('is-pending');
   }
+}
+
+function validateReferralCode(validationUrl) {
+  return new Promise((resolve, reject) => {
+    const callbackName =
+      'referralValidation_' + Date.now();
+
+    const script = document.createElement('script');
+
+    const cleanup = () => {
+      delete window[callbackName];
+      script.remove();
+    };
+
+    window[callbackName] = (result) => {
+      cleanup();
+      resolve(result);
+    };
+
+    script.onerror = () => {
+      cleanup();
+      reject(new Error('Referral validation failed.'));
+    };
+
+    script.src =
+      validationUrl +
+      '&callback=' +
+      encodeURIComponent(callbackName);
+
+    document.body.appendChild(script);
+  });
 }
