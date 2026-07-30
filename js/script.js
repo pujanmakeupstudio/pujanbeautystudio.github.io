@@ -229,7 +229,24 @@ if (referralForm) {
     );
 
     try {
-      await sendToAppsScript(referralData);
+      
+       
+       const validationUrl =
+  `${BOOKING_WEB_APP_URL}?action=checkReceiverEmail&receiverEmail=` +
+  encodeURIComponent(referralData.receiverEmail);
+
+const validationResult =
+  await validateReferralCode(validationUrl);
+
+if (validationResult.alreadyReferred) {
+  showReferralStatus(
+    'This person has already been referred to Pujan Beauty Studio.',
+    'error'
+  );
+  return;
+}
+
+await sendToAppsScript(referralData);
 
       referralForm.reset();
 
