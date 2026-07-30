@@ -1488,3 +1488,45 @@ p {
     gap: 10px;
     cursor: pointer;
 }
+
+function onEdit(e) {
+  const sheet = e.range.getSheet();
+
+  if (sheet.getName() !== 'Coupons') {
+    return;
+  }
+
+  const row = e.range.getRow();
+  const column = e.range.getColumn();
+
+  // Only monitor Column H (Redeemed), excluding the header
+  if (row === 1 || column !== 8) {
+    return;
+  }
+
+  const oldValue = String(e.oldValue || '').trim().toLowerCase();
+  const newValue = String(e.value || '').trim().toLowerCase();
+  const redeemedDateCell = sheet.getRange(row, 9);
+
+  // Prevent a redeemed coupon from being changed back
+  if (oldValue === 'yes' && newValue !== 'yes') {
+    e.range.setValue('Yes');
+
+    SpreadsheetApp.getActiveSpreadsheet().toast(
+      'This coupon has already been redeemed and cannot be changed.',
+      'Coupon Locked',
+      5
+    );
+
+    return;
+  }
+
+  // First-time redemption
+  if (newValue === 'yes') {
+    if (redeemedDateCell.isBlank()) {
+      redeemedDateCell.setValue(new Date());
+    }
+  } else if (newValue === 'no') {
+    redeemedDateCell.clearContent();
+  }
+}
