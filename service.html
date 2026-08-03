@@ -1,1 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Bridal Makeup | Pujan Beauty Studio</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.service-hero{
+    max-width:1200px;
+    margin:60px auto;
+    padding:0 24px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.service-hero img{
+    width:100%;
+    border-radius:18px;
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+.service-content h1{
+    font-size:3rem;
+    margin-bottom:18px;
+}
+
+.service-content p{
+    line-height:1.8;
+    margin-bottom:18px;
+}
+
+.features{
+    margin:30px 0;
+}
+
+.features li{
+    margin:12px 0;
+    font-size:1.05rem;
+}
+
+.book-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:16px 38px;
+    background:#342523;
+    color:#fff;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.book-btn:hover{
+    background:#8d6662;
+}
+
+@media(max-width:900px){
+
+.service-hero{
+
+grid-template-columns:1fr;
+
+}
+
+.service-content h1{
+
+font-size:2.3rem;
+
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+  <header class="site-header" id="top">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html#top" aria-label="Pujan Beauty Studio home">
+      <img
+        src="images/pujan-logo.jpg"
+        alt="Pujan Beauty Studio logo"
+        class="brand-logo"
+      />
+
+      <span>
+        <strong>Pujan Beauty Studio</strong>
+        <small>Where Beauty Meets Elegance</small>
+      </span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Service page navigation">
+      <a href="index.html#services">All Services</a>
+      <a href="index.html#referral">Refer a Friend</a>
+      <a class="nav-cta" href="index.html#booking">Request Appointment</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="service-hero">
+    <div>
+      <img
+        src="images/bridal-makeup.jpg"
+        alt="Elegant bridal makeup example"
+      />
+    </div>
+
+    <div class="service-content">
+      <p class="eyebrow">Bridal Beauty</p>
+
+      <h1>Bridal Makeup</h1>
+
+      <p>
+        Elegant, personalized bridal makeup designed to enhance your natural
+        features and help you feel confident throughout your wedding day.
+      </p>
+
+      <p>
+        Each look is tailored to your skin tone, wedding style, outfit,
+        photography needs, and personal preferences.
+      </p>
+
+      <ul class="features">
+        <li>Personalized consultation</li>
+        <li>Professional skin preparation</li>
+        <li>Camera-ready bridal makeup</li>
+        <li>Long-lasting application</li>
+        <li>False lash application</li>
+        <li>Customized colors and finish</li>
+      </ul>
+
+      <a
+        class="book-btn"
+        href="index.html?service=Bridal%20Makeup#booking"
+      >
+        Book Bridal Makeup
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-wrap">
+    <div>
+      <strong>Pujan Beauty Studio</strong>
+      <p>Where Beauty Meets Elegance</p>
+    </div>
+
+    <p>© Pujan Beauty Studio. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
