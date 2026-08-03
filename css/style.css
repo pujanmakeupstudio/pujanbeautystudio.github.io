@@ -40,6 +40,7 @@ a {
 
 button,
 input,
+select,
 textarea {
   font: inherit;
 }
@@ -1489,44 +1490,200 @@ p {
     cursor: pointer;
 }
 
-function onEdit(e) {
-  const sheet = e.range.getSheet();
+/* =========================================================
+   Production mobile navigation and custom service dropdown
+   ========================================================= */
 
-  if (sheet.getName() !== 'Coupons') {
-    return;
+/* The mobile navigation panel has a light background, so its links must be dark. */
+@media (max-width: 720px) {
+  .site-header .primary-nav {
+    background: #ffffff;
   }
 
-  const row = e.range.getRow();
-  const column = e.range.getColumn();
-
-  // Only monitor Column H (Redeemed), excluding the header
-  if (row === 1 || column !== 8) {
-    return;
+  .site-header .primary-nav a {
+    color: #2e2423 !important;
   }
 
-  const oldValue = String(e.oldValue || '').trim().toLowerCase();
-  const newValue = String(e.value || '').trim().toLowerCase();
-  const redeemedDateCell = sheet.getRange(row, 9);
-
-  // Prevent a redeemed coupon from being changed back
-  if (oldValue === 'yes' && newValue !== 'yes') {
-    e.range.setValue('Yes');
-
-    SpreadsheetApp.getActiveSpreadsheet().toast(
-      'This coupon has already been redeemed and cannot be changed.',
-      'Coupon Locked',
-      5
-    );
-
-    return;
+  .site-header .primary-nav a:hover,
+  .site-header .primary-nav a:focus-visible {
+    color: #8f5e58 !important;
   }
 
-  // First-time redemption
-  if (newValue === 'yes') {
-    if (redeemedDateCell.isBlank()) {
-      redeemedDateCell.setValue(new Date());
-    }
-  } else if (newValue === 'no') {
-    redeemedDateCell.clearContent();
+  .site-header .primary-nav .nav-cta {
+    border-color: #2e2423;
+    background: #2e2423;
+    color: #ffffff !important;
   }
+
+  .site-header .primary-nav .nav-cta:hover,
+  .site-header .primary-nav .nav-cta:focus-visible {
+    background: #8f5e58;
+    color: #ffffff !important;
+  }
+
+  .site-header .menu-toggle span:not(.sr-only) {
+    background: #ffffff;
+  }
+}
+
+/* Custom service dropdown avoids native mobile white-on-white option rendering. */
+.custom-select {
+  position: relative;
+}
+
+.custom-select-trigger {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  outline: none;
+  background: var(--paper);
+  color: var(--muted);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.custom-select.has-value .custom-select-trigger {
+  color: var(--ink);
+}
+
+.custom-select-trigger:hover {
+  border-color: var(--rose);
+}
+
+.custom-select-trigger:focus-visible,
+.custom-select.is-open .custom-select-trigger {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 4px rgba(183, 122, 114, 0.12);
+}
+
+.custom-select.has-error .custom-select-trigger {
+  border-color: #a93636;
+  box-shadow: 0 0 0 4px rgba(169, 54, 54, 0.1);
+}
+
+.custom-select-arrow {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 auto;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+.custom-select.is-open .custom-select-arrow {
+  transform: rotate(225deg) translate(-2px, -2px);
+}
+
+.custom-select-options {
+  position: absolute;
+  z-index: 80;
+  top: calc(100% + 8px);
+  right: 0;
+  left: 0;
+  max-height: 310px;
+  overflow-y: auto;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #3f2b29;
+  box-shadow: 0 18px 45px rgba(46, 36, 35, 0.28);
+  -webkit-overflow-scrolling: touch;
+}
+
+.custom-select-options[hidden] {
+  display: none;
+}
+
+.custom-select-options [role="option"] {
+  width: 100%;
+  min-height: 46px;
+  display: block;
+  padding: 11px 12px;
+  border: 0;
+  border-radius: 9px;
+  background: #3f2b29;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.custom-select-options [role="option"]:hover,
+.custom-select-options [role="option"]:focus-visible {
+  outline: none;
+  background: #8f5e58;
+  color: #ffffff;
+}
+
+.custom-select-options [role="option"][aria-selected="true"] {
+  background: #f7e9e5;
+  color: #2e2423;
+}
+
+.field-error {
+  margin: 8px 0 0;
+  color: #a93636;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.form-status.is-success,
+.booking-status.is-success {
+  color: #246b3c;
+}
+
+.form-status.is-error,
+.booking-status.is-error {
+  color: #a93636;
+}
+
+.form-status.is-pending,
+.booking-status.is-pending {
+  color: var(--rose-dark);
+}
+
+@media (max-width: 720px) {
+  .custom-select-options {
+    max-height: min(310px, 48vh);
+  }
+}
+
+
+
+/* Final override: high-contrast service dropdown on every device */
+#booking-service-control .custom-select-options {
+  background: #3f2b29 !important;
+  border-color: #6f4b47 !important;
+}
+
+#booking-service-control .custom-select-options [role="option"] {
+  background: #3f2b29 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+#booking-service-control .custom-select-options [role="option"]:hover,
+#booking-service-control .custom-select-options [role="option"]:focus-visible {
+  background: #8f5e58 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+#booking-service-control .custom-select-options [role="option"][aria-selected="true"] {
+  background: #f7e9e5 !important;
+  color: #2e2423 !important;
+  -webkit-text-fill-color: #2e2423 !important;
 }
