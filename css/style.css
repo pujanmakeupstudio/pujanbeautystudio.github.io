@@ -1687,3 +1687,33 @@ p {
   color: #2e2423 !important;
   -webkit-text-fill-color: #2e2423 !important;
 }
+
+/* Final mobile menu visibility fix */
+@media screen and (max-width: 720px) {
+  header.site-header nav#primary-nav.primary-nav {
+    background-color: #ffffff !important;
+  }
+
+  header.site-header nav#primary-nav.primary-nav > a,
+  header.site-header nav#primary-nav.primary-nav > a:link,
+  header.site-header nav#primary-nav.primary-nav > a:visited {
+    color: #2e2423 !important;
+    -webkit-text-fill-color: #2e2423 !important;
+    opacity: 1 !important;
+  }
+
+  header.site-header nav#primary-nav.primary-nav > a:hover,
+  header.site-header nav#primary-nav.primary-nav > a:focus,
+  header.site-header nav#primary-nav.primary-nav > a:active {
+    color: #8f5e58 !important;
+    -webkit-text-fill-color: #8f5e58 !important;
+  }
+
+  header.site-header nav#primary-nav.primary-nav > a.nav-cta,
+  header.site-header nav#primary-nav.primary-nav > a.nav-cta:link,
+  header.site-header nav#primary-nav.primary-nav > a.nav-cta:visited {
+    background-color: #2e2423 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+}
