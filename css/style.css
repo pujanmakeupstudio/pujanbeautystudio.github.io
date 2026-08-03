@@ -1688,32 +1688,57 @@ p {
   -webkit-text-fill-color: #2e2423 !important;
 }
 
-/* Final mobile menu visibility fix */
+
+/* =========================================================
+   FINAL MOBILE HAMBURGER MENU FIX
+   Dark menu panel + white links, including Services.
+   Keep this block at the absolute end of the file.
+   ========================================================= */
 @media screen and (max-width: 720px) {
   header.site-header nav#primary-nav.primary-nav {
-    background-color: #ffffff !important;
+    background: #4a2f2c !important;
+    background-color: #4a2f2c !important;
+    border-color: rgba(255, 255, 255, 0.22) !important;
+    box-shadow: 0 18px 45px rgba(46, 36, 35, 0.32) !important;
   }
 
   header.site-header nav#primary-nav.primary-nav > a,
   header.site-header nav#primary-nav.primary-nav > a:link,
   header.site-header nav#primary-nav.primary-nav > a:visited {
-    color: #2e2423 !important;
-    -webkit-text-fill-color: #2e2423 !important;
+    display: block !important;
+    width: 100% !important;
+    padding: 12px 14px !important;
+    border-radius: 10px !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
     opacity: 1 !important;
+    visibility: visible !important;
+    font-weight: 700 !important;
+    text-align: left !important;
   }
 
   header.site-header nav#primary-nav.primary-nav > a:hover,
-  header.site-header nav#primary-nav.primary-nav > a:focus,
+  header.site-header nav#primary-nav.primary-nav > a:focus-visible,
   header.site-header nav#primary-nav.primary-nav > a:active {
-    color: #8f5e58 !important;
-    -webkit-text-fill-color: #8f5e58 !important;
+    background: #8f5e58 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
   }
 
   header.site-header nav#primary-nav.primary-nav > a.nav-cta,
   header.site-header nav#primary-nav.primary-nav > a.nav-cta:link,
   header.site-header nav#primary-nav.primary-nav > a.nav-cta:visited {
-    background-color: #2e2423 !important;
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #2e2423 !important;
+    -webkit-text-fill-color: #2e2423 !important;
+    text-align: center !important;
+  }
+
+  header.site-header nav#primary-nav.primary-nav > a.nav-cta:hover,
+  header.site-header nav#primary-nav.primary-nav > a.nav-cta:focus-visible {
+    background: #f3c9bf !important;
+    color: #2e2423 !important;
+    -webkit-text-fill-color: #2e2423 !important;
   }
 }
