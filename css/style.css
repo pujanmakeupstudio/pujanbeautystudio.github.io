@@ -1811,3 +1811,11 @@ p {
     transform:translateY(-2px);
     opacity:.92;
 }
+.social-btn,
+.social-btn:link,
+.social-btn:visited,
+.social-btn:hover,
+.social-btn:active,
+.social-btn span {
+    color: #ffffff !important;
+}
