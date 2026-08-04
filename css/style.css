@@ -1799,6 +1799,13 @@ p {
     background:#1877F2;
     color:white;
 }
+.social-btn span{
+    color:#ffffff;
+}
+
+.social-btn:visited span{
+    color:#ffffff;
+}
 
 .social-btn:hover{
     transform:translateY(-2px);
