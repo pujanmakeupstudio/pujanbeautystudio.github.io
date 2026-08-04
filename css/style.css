@@ -1790,27 +1790,14 @@ p {
     filter:brightness(0) invert(1);
 }
 
-.instagram{
-    background:#E1306C;
-    color:white;
+.instagram {
+    background: #E1306C;
 }
 
-.facebook{
-    background:#1877F2;
-    color:white;
-}
-.social-btn span{
-    color:#ffffff;
+.facebook {
+    background: #1877F2;
 }
 
-.social-btn:visited span{
-    color:#ffffff;
-}
-
-.social-btn:hover{
-    transform:translateY(-2px);
-    opacity:.92;
-}
 .social-btn,
 .social-btn:link,
 .social-btn:visited,
@@ -1818,4 +1805,11 @@ p {
 .social-btn:active,
 .social-btn span {
     color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-decoration: none;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
 }
