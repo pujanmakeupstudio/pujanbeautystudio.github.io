@@ -51,7 +51,24 @@ const BOOKING_WEB_APP_URL =
 const bookingForm = document.getElementById('booking-form');
 const bookingStatus = document.getElementById('booking-status');
 const bookingDate = document.getElementById('booking-date');
+const bookingService = document.getElementById('booking-service');
 
+if (bookingService) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const requestedService = urlParams.get('service');
+
+  if (requestedService) {
+    const matchingOption = Array.from(bookingService.options).find(
+      (option) =>
+        option.value.trim().toLowerCase() ===
+        requestedService.trim().toLowerCase()
+    );
+
+    if (matchingOption) {
+      bookingService.value = matchingOption.value;
+    }
+  }
+}
 // Prevent customers from selecting a past date.
 if (bookingDate) {
   bookingDate.min = getLocalDateString(new Date());
