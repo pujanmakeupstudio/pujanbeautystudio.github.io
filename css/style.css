@@ -506,7 +506,15 @@ p {
     background:#8d6662;
     border-color:#8d6662;
 }
+.quick-icon{
+    width:20px;
+    height:20px;
+    flex-shrink:0;
+}
 
+.quick-book .quick-icon{
+    filter:brightness(0) invert(1);
+}
 @media(max-width:700px){
 
 .quick-contact-buttons{
