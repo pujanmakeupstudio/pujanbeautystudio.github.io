@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Explore bridal makeup services and bridal beauty examples from Pujan Beauty Studio in Concord, North Carolina."
+  >
+
+  <title>Bridal Makeup | Pujan Beauty Studio</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .service-page {
+      background: #fffaf8;
+    }
+    .service-hero {
+      width: min(1200px, calc(100% - 40px));
+      margin: 60px auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 50px;
+      align-items: center;
+    }
+
+    .service-hero-image {
+      margin: 0;
+    }
+
+    .service-hero-image img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(46, 36, 35, 0.15);
+    }
+
+    .service-content h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.05;
+    }
+
+    .service-content p {
+      margin: 0 0 18px;
+      line-height: 1.8;
+    }
+
+    .features {
+      margin: 28px 0;
+      padding-left: 22px;
+    }
+
+    .features li {
+      margin: 11px 0;
+      line-height: 1.5;
+    }
+
+    .service-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .book-btn,
+    .back-btn {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 30px;
+      border: 1px solid #342523;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .book-btn {
+      background: #342523;
+      color: #ffffff;
+    }
+
+    .back-btn {
+      background: transparent;
+      color: #342523;
+    }
+
+    .book-btn:hover,
+    .book-btn:focus-visible {
+      background: #8d6662;
+      border-color: #8d6662;
+      transform: translateY(-2px);
+    }
+
+    .back-btn:hover,
+    .back-btn:focus-visible {
+      background: #f3e4df;
+      transform: translateY(-2px);
+    }
+
+    .service-gallery-section {
+      width: min(1200px, calc(100% - 40px));
+      margin: 30px auto 80px;
+    }
+
+    .gallery-heading {
+      max-width: 720px;
+      margin-bottom: 30px;
+    }
+
+    .gallery-heading h2 {
+      margin: 8px 0 12px;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .gallery-heading p {
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .service-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #f4e9e5;
+      box-shadow: 0 12px 30px rgba(46, 36, 35, 0.1);
+    }
+
+    .gallery-button {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: zoom-in;
+    }
+
+    .gallery-button img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-button:hover img,
+    .gallery-button:focus-visible img {
+      transform: scale(1.035);
+    }
+
+    .gallery-button:focus-visible {
+      outline: 3px solid #9f6a64;
+      outline-offset: 4px;
+    }
+
+    .gallery-note {
+      margin-top: 20px;
+      color: #6d5a57;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(20, 14, 13, 0.93);
+    }
+
+    .lightbox.is-open {
+      display: flex;
+    }
+
+    .lightbox-image {
+      display: block;
+      max-width: min(92vw, 1000px);
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+    }
+
+    .lightbox-close,
+    .lightbox-nav {
+      position: fixed;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .lightbox-close:hover,
+    .lightbox-close:focus-visible,
+    .lightbox-nav:hover,
+    .lightbox-nav:focus-visible {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .lightbox-close {
+      top: 20px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      font-size: 1.8rem;
+    }
+
+    .lightbox-nav {
+      top: 50%;
+      width: 52px;
+      height: 64px;
+      border-radius: 14px;
+      transform: translateY(-50%);
+      font-size: 2rem;
+    }
+
+    .lightbox-previous {
+      left: 20px;
+    }
+
+    .lightbox-next {
+      right: 20px;
+    }
+
+    .lightbox-counter {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      margin: 0;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.45);
+      color: #ffffff;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+    }
+
+    body.lightbox-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .service-hero {
+        grid-template-columns: 1fr;
+        margin-top: 36px;
+      }
+
+      .service-hero-image img {
+        aspect-ratio: 4 / 5;
+      }
+
+      .service-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .service-hero,
+      .service-gallery-section {
+        width: min(100% - 28px, 1200px);
+      }
+
+      .service-hero {
+        gap: 32px;
+      }
+
+      .service-gallery {
+        gap: 12px;
+      }
+
+      .service-actions {
+        flex-direction: column;
+      }
+
+      .book-btn,
+      .back-btn {
+        width: 100%;
+      }
+
+      .lightbox {
+        padding: 12px;
+      }
+
+      .lightbox-nav {
+        top: auto;
+        bottom: 20px;
+        width: 48px;
+        height: 48px;
+        transform: none;
+      }
+
+      .lightbox-previous {
+        left: 20px;
+      }
+
+      .lightbox-next {
+        right: 20px;
+      }
+
+      .lightbox-counter {
+        bottom: 27px;
+      }
+    }
+  </style>
+</head>
+
+<body class="service-page">
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+
+      <a
+        class="brand"
+        href="index.html#top"
+        aria-label="Pujan Beauty Studio home"
+      >
+        <img
+          src="images/pujan-logo.jpg"
+          alt="Pujan Beauty Studio logo"
+          class="brand-logo"
+        >
+
+        <span>
+          <strong>Pujan Beauty Studio</strong>
+          <small>Where Beauty Meets Elegance</small>
+        </span>
+      </a>
+
+      <nav
+        class="primary-nav"
+        aria-label="Service page navigation"
+      >
+        <a href="index.html#services">All Services</a>
+        <a href="index.html#referral">Refer a Friend</a>
+
+        <a
+          class="nav-cta"
+          href="index.html?service=Bridal%20Makeup#booking"
+        >
+          Request Appointment
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="service-hero">
+
+      <figure class="service-hero-image">
+        <img
+          src="images/bridal-makeup/bridal-01.png"
+          alt="Elegant bridal makeup with traditional jewelry and red bridal attire"
+        >
+      </figure>
+
+      <div class="service-content">
+
+        <p class="eyebrow">Bridal Beauty</p>
+
+        <h1>Bridal Makeup</h1>
+
+        <p>
+          Elegant, personalized bridal makeup designed to enhance your
+          natural features and help you feel confident throughout your
+          wedding day.
+        </p>
+
+        <p>
+          Each look is tailored to your skin tone, wedding style, outfit,
+          photography needs, and personal preferences.
+        </p>
+
+        <ul class="features">
+          <li>Personalized bridal consultation</li>
+          <li>Professional skin preparation</li>
+          <li>Camera-ready bridal makeup</li>
+          <li>Long-lasting application</li>
+          <li>False lash application</li>
+          <li>Customized colors and finish</li>
+        </ul>
+
+        <div class="service-actions">
+
+         <a
+        class="back-btn"
+        href="index.html#services"
+    >
+        View All Services
+    </a>
+
+</div>
+       
+        </div>
+
+      </section>
+
+    <section
+      class="service-gallery-section"
+      aria-labelledby="bridal-gallery-heading"
+    >
+
+      <div class="gallery-heading">
+
+        <p class="eyebrow">Bridal Inspiration</p>
+
+        <h2 id="bridal-gallery-heading">
+          Explore Bridal Looks
+        </h2>
+
+        <p>
+          Browse examples of bridal makeup, jewelry coordination,
+          hairstyles, and traditional bridal finishes.
+        </p>
+
+      </div>
+
+      <div class="service-gallery">
+
+        <figure class="gallery-item">
+          <button
+            class="gallery-button"
+            type="button"
+            data-index="0"
+            aria-label="Open bridal makeup image 1"
+          >
+            <img
+              src="images/bridal-makeup/bridal-01.png"
+              alt="Traditional red bridal makeup look with gold jewelry"
+              loading="lazy"
+            >
+          </button>
+        </figure>
+
+        <figure class="gallery-item">
+          <button
+            class="gallery-button"
+            type="button"
+            data-index="1"
+            aria-label="Open bridal makeup image 2"
+          >
+            <img
+              src="images/bridal-makeup/bridal-02.png"
+              alt="Bridal makeup with a soft traditional finish"
+              loading="lazy"
+            >
+          </button>
+        </figure>
+
+        <figure class="gallery-item">
+          <button
+            class="gallery-button"
+            type="button"
+            data-index="2"
+            aria-label="Open bridal makeup image 3"
+          >
+            <img
+              src="images/bridal-makeup/bridal-03.png"
+              alt="Elegant bridal makeup with detailed eye makeup"
+              loading="lazy"
+            >
+          </button>
+        </figure>
+
+        <figure class="gallery-item">
+          <button
+            class="gallery-button"
+            type="button"
+            data-index="3"
+            aria-label="Open bridal makeup image 4"
+          >
+            <img
+              src="images/bridal-makeup/bridal-04.png"
+              alt="Blush bridal makeup look with pink jewelry"
+              loading="lazy"
+            >
+          </button>
+        </figure>
+
+        <figure class="gallery-item">
+          <button
+            class="gallery-button"
+            type="button"
+            data-index="4"
+            aria-label="Open bridal makeup image 5"
+          >
+            <img
+              src="images/bridal-makeup/bridal-05.png"
+              alt="Traditional bridal beauty look with detailed jewelry"
+              loading="lazy"
+            >
+          </button>
+        </figure>
+
+        <figure class="gallery-item">
+          <button
+            class="gallery-button"
+            type="button"
+            data-index="5"
+            aria-label="Open bridal makeup image 6"
+          >
+            <img
+              src="images/bridal-makeup/bridal-06.png"
+              alt="Luxury bridal makeup with a red and gold bridal outfit"
+              loading="lazy"
+            >
+          </button>
+        </figure>
+
+      </div>
+
+  </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <div class="container footer-wrap">
+
+      <div>
+        <strong>Pujan Beauty Studio</strong>
+        <p>Where Beauty Meets Elegance</p>
+      </div>
+
+      <p>
+        © <span id="year"></span>
+        Pujan Beauty Studio. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <div
+    class="lightbox"
+    id="bridal-lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Bridal makeup image gallery"
+    aria-hidden="true"
+  >
+
+    <button
+      class="lightbox-close"
+      id="lightbox-close"
+      type="button"
+      aria-label="Close image gallery"
+    >
+      ×
+    </button>
+
+    <button
+      class="lightbox-nav lightbox-previous"
+      id="lightbox-previous"
+      type="button"
+      aria-label="Previous image"
+    >
+      ‹
+    </button>
+
+    <img
+      class="lightbox-image"
+      id="lightbox-image"
+      src=""
+      alt=""
+    >
+
+    <button
+      class="lightbox-nav lightbox-next"
+      id="lightbox-next"
+      type="button"
+      aria-label="Next image"
+    >
+      ›
+    </button>
+
+    <p
+      class="lightbox-counter"
+      id="lightbox-counter"
+      aria-live="polite"
+    ></p>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    const galleryImages = [
+      {
+        src: "images/bridal-makeup/bridal-01.png",
+        alt: "Traditional red bridal makeup look with gold jewelry"
+      },
+      {
+        src: "images/bridal-makeup/bridal-02.png",
+        alt: "Bridal makeup with a soft traditional finish"
+      },
+      {
+        src: "images/bridal-makeup/bridal-03.png",
+        alt: "Elegant bridal makeup with detailed eye makeup"
+      },
+      {
+        src: "images/bridal-makeup/bridal-04.png",
+        alt: "Blush bridal makeup look with pink jewelry"
+      },
+      {
+        src: "images/bridal-makeup/bridal-05.png",
+        alt: "Traditional bridal beauty look with detailed jewelry"
+      },
+      {
+        src: "images/bridal-makeup/bridal-06.png",
+        alt: "Luxury bridal makeup with red and gold bridal attire"
+      }
+    ];
+
+    const lightbox = document.getElementById("bridal-lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxCounter =
+      document.getElementById("lightbox-counter");
+    const closeButton = document.getElementById("lightbox-close");
+    const previousButton =
+      document.getElementById("lightbox-previous");
+    const nextButton =
+      document.getElementById("lightbox-next");
+    const galleryButtons =
+      document.querySelectorAll(".gallery-button");
+
+    let currentImageIndex = 0;
+    let lastFocusedElement = null;
+
+    function updateLightbox() {
+      const selectedImage = galleryImages[currentImageIndex];
+
+      lightboxImage.src = selectedImage.src;
+      lightboxImage.alt = selectedImage.alt;
+
+      lightboxCounter.textContent =
+        `${currentImageIndex + 1} of ${galleryImages.length}`;
+    }
+
+    function openLightbox(index) {
+      currentImageIndex = index;
+      lastFocusedElement = document.activeElement;
+
+      updateLightbox();
+
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.classList.add("lightbox-open");
+
+      closeButton.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("lightbox-open");
+
+      lightboxImage.src = "";
+
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+      }
+    }
+
+    function showPreviousImage() {
+      currentImageIndex =
+        (currentImageIndex - 1 + galleryImages.length) %
+        galleryImages.length;
+
+      updateLightbox();
+    }
+
+    function showNextImage() {
+      currentImageIndex =
+        (currentImageIndex + 1) % galleryImages.length;
+
+      updateLightbox();
+    }
+
+    galleryButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        openLightbox(Number(button.dataset.index));
+      });
+    });
+
+    closeButton.addEventListener("click", closeLightbox);
+    previousButton.addEventListener("click", showPreviousImage);
+    nextButton.addEventListener("click", showNextImage);
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (!lightbox.classList.contains("is-open")) {
+        return;
+      }
+
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+
+      if (event.key === "ArrowLeft") {
+        showPreviousImage();
+      }
+
+      if (event.key === "ArrowRight") {
+        showNextImage();
+      }
+    });
+  </script>
+
+</body>
+</html>
