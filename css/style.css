@@ -1888,3 +1888,57 @@ justify-content:center;
     transform: translateY(-2px);
     opacity: 0.92;
 }
+.email-choice {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.email-choice[hidden] {
+  display: none;
+}
+
+.email-choice-box {
+  position: relative;
+  width: min(400px, 100%);
+  padding: 32px;
+  border-radius: 18px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.email-choice-box h3 {
+  margin: 0 0 20px;
+}
+
+.email-choice-box a {
+  display: block;
+  margin: 10px 0;
+  padding: 13px 18px;
+  border: 1px solid #342523;
+  border-radius: 999px;
+  color: #342523;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.email-choice-box a:hover {
+  background: #342523;
+  color: #fff;
+}
+
+.email-choice-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+}
