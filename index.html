@@ -647,5 +647,30 @@ Appointments are available Monday through Sunday. Business hours are 9:00 AM to 
   </div>
 
   <script src="js/script.js"></script>
+  <script>
+  const emailButton = document.getElementById("email-choice-button");
+  const emailChoice = document.getElementById("email-choice");
+  const emailClose = document.getElementById("email-choice-close");
+
+  emailButton.addEventListener("click", () => {
+    emailChoice.hidden = false;
+  });
+
+  emailClose.addEventListener("click", () => {
+    emailChoice.hidden = true;
+  });
+
+  emailChoice.addEventListener("click", (event) => {
+    if (event.target === emailChoice) {
+      emailChoice.hidden = true;
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      emailChoice.hidden = true;
+    }
+  });
+</script>
 </body>
 </html>
