@@ -529,14 +529,56 @@ Appointments are available Monday through Sunday. Business hours are 9:00 AM to 
         <span>WhatsApp</span>
     </a>
 
-    <a href="mailto:pujanbeautystudio@gmail.com?subject=Appointment%20Inquiry"
-       class="quick-btn quick-email">
-        <img src="images/icons/email.svg"
-             class="quick-icon"
-             alt=""
-             aria-hidden="true">
-        <span>Email</span>
-    </a>
+   <button
+    type="button"
+    class="quick-btn quick-email"
+    id="email-choice-button"
+    aria-haspopup="dialog"
+    aria-controls="email-choice"
+>
+    <img
+        src="images/icons/email.svg"
+        class="quick-icon"
+        alt=""
+        aria-hidden="true"
+    >
+    <span>Email</span>
+</button>
+
+<div class="email-choice" id="email-choice" hidden>
+    <div class="email-choice-box">
+        <button
+            type="button"
+            class="email-choice-close"
+            id="email-choice-close"
+            aria-label="Close email options"
+        >
+            ×
+        </button>
+
+        <h3>Send us an email</h3>
+
+        <a href="mailto:pujanbeautystudio@gmail.com?subject=Appointment%20Inquiry">
+            Default Email App
+        </a>
+
+        <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=pujanbeautystudio@gmail.com&su=Appointment%20Inquiry"
+            target="_blank"
+            rel="noopener"
+        >
+            Gmail
+        </a>
+
+        <a
+            href="https://outlook.office.com/mail/deeplink/compose?to=pujanbeautystudio@gmail.com&subject=Appointment%20Inquiry"
+            target="_blank"
+            rel="noopener"
+        >
+            Outlook
+        </a>
+    </div>
+</div>
 
 </div>
 
